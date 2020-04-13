@@ -8,7 +8,7 @@
       </div>
     </div>
 
-    <van-tag>标签</van-tag>
+    <van-tag>标签 {{ countNum }}</van-tag>
     <van-tag type="danger">标签</van-tag>
     <van-tag type="primary">标签</van-tag>
     <van-tag type="success">标签</van-tag>
@@ -29,6 +29,7 @@
 
 <script>
   import card from '@/components/card'
+  import {mapState, mapGetters} from 'vuex'
 
   export default {
     mpType: 'page',
@@ -42,6 +43,13 @@
 
     components: {
       card
+    },
+
+    computed: {
+      ...mapState([
+        'count'
+      ]),
+      ...mapGetters({'countNum': 'getCount'})
     },
 
     methods: {
