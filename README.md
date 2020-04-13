@@ -43,3 +43,5 @@ var px2rpxLoader = {
       rpxUnit: 1
     }
   }
+
+设置了几个tabbar，测试云开发
