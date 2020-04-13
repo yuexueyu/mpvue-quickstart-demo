@@ -18,6 +18,11 @@ const store = new Vuex.Store({
       const obj = state
       obj.count -= 1
     }
+  },
+  getters: {
+    getCount (state) {
+      return state.count
+    }
   }
 })
 
