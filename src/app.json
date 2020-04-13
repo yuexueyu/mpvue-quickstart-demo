@@ -30,10 +30,47 @@
         "navigationBarTitleText": "关于"
       }
     },
-    "pages/counter",
     {
-      "path": "packageA/logs",
-      "subPackage": true
+      "path": "pages/register",
+      "config": {
+        "navigationBarTitleText": "注册"
+      }
+    },
+    {
+      "path": "pages/login",
+      "config": {
+        "navigationBarTitleText": "登录"
+      }
+    },
+    {
+      "path": "manage/students",
+      "config": {
+        "navigationBarTitleText": "管理学生"
+      }
+    },
+    {
+      "path": "manage/class",
+      "config": {
+        "navigationBarTitleText": "管理班级"
+      }
+    },
+    {
+      "path": "manage/test",
+      "config": {
+        "navigationBarTitleText": "管理成绩"
+      }
+    },
+    {
+      "path": "manage/one2one",
+      "config": {
+        "navigationBarTitleText": "管理一对一"
+      }
+    },
+    {
+      "path": "manage/about",
+      "config": {
+        "navigationBarTitleText": "管理关于"
+      }
     }
   ],
   "window": {

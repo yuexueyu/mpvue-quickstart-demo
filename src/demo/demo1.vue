@@ -24,19 +24,12 @@
       <input type="text" class="form-control" v-model.lazy="motto" placeholder="v-model.lazy"/>
     </form>
     <a href="/pages/counter" class="counter">去往Vuex示例页面</a>
-    <div class='home-page'>
-      <p @click='handleClick'>
-        click me
-      </p>
-      <p v-text='test'></p>
-    </div>
   </div>
 </template>
 
 <script>
   import card from '@/components/card'
-  import {mapState, mapMutations} from 'vuex'
-  import {TEST} from '@/store/mutation-types'
+  import {mapState, mapGetters} from 'vuex'
 
   export default {
     mpType: 'page',
@@ -54,18 +47,12 @@
 
     computed: {
       ...mapState([
-        'test', 'userInfo'
-      ])
+        'count'
+      ]),
+      ...mapGetters({'countNum': 'getCount'})
     },
 
     methods: {
-      ...mapMutations([
-        TEST
-      ]),
-      handleClick () {
-        this[TEST](Math.random()) // 调用mutation
-        console.log(this.test) // 获取store中test数据
-      },
       bindViewTap () {
         const url = '/packageA/logs'
         this.$router.push(url)

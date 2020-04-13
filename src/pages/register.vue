@@ -1,12 +1,11 @@
 <template>
   <div>
-    班级
+    注册
   </div>
 </template>
 
 <script>
   export default {
-
     data () {
       return {
         motto: 'Hello miniprograme'
@@ -14,8 +13,6 @@
     },
 
     components: {},
-
-    computed: {},
 
     methods: {},
 

@@ -14,7 +14,8 @@
     "mpvue": "^2.0.0",
     "mpvue-router-patch": "^2.0.0",
     "vant-weapp": "^0.5.0",
-    "vuex": "^3.0.0"
+    "vuex": "^3.0.0",
+    "vuex-persistedstate": "^3.0.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

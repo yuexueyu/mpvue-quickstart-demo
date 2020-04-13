@@ -11,7 +11,7 @@
 	"compileType": "miniprogram",
 	"appid": "wx894d8b0bc3362fcd",
 	"projectname": "mpvue-quickstart",
-  "cloudfunctionRoot": "static/cloudfunctions/",
+	"cloudfunctionRoot": "static/cloudfunctions/",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"condition": {

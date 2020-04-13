@@ -1,29 +1,39 @@
-// https://vuex.vuejs.org/zh-cn/intro.html
-// make sure to call Vue.use(Vuex) if using a module system
 import Vue from 'vue'
 import Vuex from 'vuex'
 
+import getters from './getters'
+import mutations from './mutations'
+import actions from './action'
+
+import createLogger from 'vuex/dist/logger'
+import createPersistedState from 'vuex-persistedstate'
+
 Vue.use(Vuex)
 
-const store = new Vuex.Store({
-  state: {
-    count: 0
-  },
-  mutations: {
-    increment: (state) => {
-      const obj = state
-      obj.count += 1
-    },
-    decrement: (state) => {
-      const obj = state
-      obj.count -= 1
-    }
-  },
-  getters: {
-    getCount (state) {
-      return state.count
-    }
-  }
-})
+const debug = process.env.NODE_ENV !== 'production'
 
-export default store
+const state = {
+  test: 0,
+  userInfo: {}
+}
+
+export default new Vuex.Store({
+  state,
+  getters,
+  actions,
+  mutations,
+  // strict: debug,
+  // plugins: debug ? [createLogger()] : [],
+  plugins: [
+    createPersistedState({
+      storage: {
+        getItem: key => wx.getStorageSync(key),
+        setItem: (key, value) => wx.setStorageSync(key, value),
+        // removeItem: key => wx.clearStorage()
+        // （tips: 提示，小程序每次进入都会执行removeItem方法，导致数据存储不下来，所以暂时把removeItem后面的函数写为一个空函数！！）
+        removeItem: key => () => {}
+      }
+    }),
+    debug ? createLogger() : {}
+  ]
+})
